@@ -4,3 +4,10 @@
 	 padding: 0px;
 }
  
+.App .background{
+	position: fixed;
+    left: 0px;
+    width: 105vw;
+    bottom: 0px;
+    z-index: -10000;
+}

@@ -31,7 +31,7 @@ const CustomNav = ({ li }) => {
                             className="navbar__li"
                             style={{
                                 display:
-                                    window === false ? "inline-block" : "none",
+                                    window === false ? "flex" : "none",
                             }}
                         >
                             {item[0]}

@@ -28,6 +28,10 @@
 	 font-family: "Lato";
 	 font-weight: 400;
 }
+/* .navbar__li-box li:first-of-type{
+	width: 90px;
+	display: flex;
+} */
  .navbar__li-box:first-child {
 	 margin-top: 53px;
 }
@@ -43,7 +47,7 @@
     width: 29px;
 }
  .navbar__li-box:hover {
-	 border-left: 7px solid #58b5fc;
+	 border-left: 7px solid #459938;
 	 cursor: pointer;
 }
  

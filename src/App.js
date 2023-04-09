@@ -8,6 +8,9 @@ import './App.css';
 import CustomNav from './components/NavSide';
 import "./styles.css";
 import Loading from './templates/loading/Loading';
+import waveBcg from "./icons/wave-bcg.svg"
+import LogoIcone from "./icons/Logo-icone.svg"
+import AgroTruck from "./icons/AgroTruck.svg"
 
 let is_loading = true
 
@@ -21,32 +24,30 @@ function content(){
   return(
     <CustomNav
         li={[
-            ["Dashboard", dashboard],
-            ["Restautants", restaurant],
-            ["Manage Users", manageUser],
-            ["Manage Orders", manageOrder],
-            ["Manage Coupons", manageCoupom],
+            [<img style={{width: "90px", paddingLeft: "0px"}} src={AgroTruck}></img>, LogoIcone],
+            ["Motoristas", dashboard],
+            ["Cadastrar Pedido", restaurant],
+            ["Pedido Atual", manageOrder],
+            ["Perfil", manageUser]
         ]}
     />
   )
 }
 
-function teste(){
-  return(
-    setTimeout(() => {
-      content()
-    }, 3000)
-  )
-}
+// function teste(){
+//   return(
+//     setTimeout(() => {
+//       content()
+//     }, 3000)
+//   )
+// }
 
 function App() {
   return (
       <div className="App">
+        <img className='background' src={waveBcg}></img>
         {
-          loading()
-        }
-        {
-          teste()
+          content()
         }
 
       </div>
