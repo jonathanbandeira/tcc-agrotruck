@@ -12,6 +12,7 @@ import waveBcg from "./icons/wave-bcg.svg"
 import LogoIcone from "./icons/Logo-icone.svg"
 import AgroTruck from "./icons/AgroTruck.svg"
 
+
 let is_loading = true
 
 function loading(){
@@ -19,6 +20,8 @@ function loading(){
     <Loading/>
   )
 }
+
+
 
 function content(){
   return(
@@ -41,8 +44,10 @@ function content(){
 //     }, 3000)
 //   )
 // }
+//if rota === inicio carregar componente inicio ,if rota registro carregar componente registro
 
-function App() {
+function App(props) {
+  console.log(props.rota)
   return (
       <div className="App">
         <img className='background' src={waveBcg}></img>
@@ -51,6 +56,7 @@ function App() {
         }
 
       </div>
+      
   );
 }
 
