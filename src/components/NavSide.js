@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import menu from "../icons/menu.svg"
+import "./NavSide.css";
 
 const CustomNav = ({ li }) => {
-    const [window, setWindow] = useState(false);
+    const [window, setWindow] = useState(true);
 
     let openClose = () => {
         if (window === false) {

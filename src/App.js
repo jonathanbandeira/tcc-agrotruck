@@ -1,29 +1,17 @@
-import logo from './logo.svg';
+import './App.css';
+
 import dashboard from './icons/dashboard.svg'
 import restaurant from "./icons/restaurant.svg";
 import manageUser from "./icons/manage-user.svg";
 import manageOrder from "./icons/manage-order.svg";
-import manageCoupom from "./icons/manage-coupom.svg";
-import './App.css';
 import CustomNav from './components/NavSide';
-import "./styles.css";
-import Loading from './templates/loading/Loading';
 import waveBcg from "./icons/wave-bcg.svg"
 import LogoIcone from "./icons/Logo-icone.svg"
 import AgroTruck from "./icons/AgroTruck.svg"
+import Home from './templates/home/home';
+import Loading from './templates/loading/Loading';
 
-
-let is_loading = true
-
-function loading(){
-  return(
-    <Loading/>
-  )
-}
-
-
-
-function content(){
+const NavSide = () => {
   return(
     <CustomNav
         li={[
@@ -37,24 +25,31 @@ function content(){
   )
 }
 
-// function teste(){
-//   return(
-//     setTimeout(() => {
-//       content()
-//     }, 3000)
-//   )
-// }
-//if rota === inicio carregar componente inicio ,if rota registro carregar componente registro
+const TemplateLoader = (path) => {
+  console.log(path === "/", "pink")
+  if(path === "/") {
+    return (<Home/>)
+  } else if(path === "/perfil"){
+      //caregar componente de tela perfil
+  } else if(path === "/motorista"){
 
-function App(props) {
-  console.log(props.rota)
+  } else if(path === "/pedido"){
+
+  }
+}
+
+const  App = ({path}) => {
   return (
       <div className="App">
         <img className='background' src={waveBcg}></img>
-        {
-          content()
+        {path !== "/" &&
+          NavSide()
         }
-
+        <div className='container'>
+          {
+            TemplateLoader(path)
+          }
+        </div>
       </div>
       
   );

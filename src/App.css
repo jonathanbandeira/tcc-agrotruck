@@ -12,3 +12,9 @@
     z-index: -10000;
 }
 
+.d-flex{
+    display: flex;
+}
+.container{
+    padding-left: 60px;
+}
