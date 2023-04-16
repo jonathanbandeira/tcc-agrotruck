@@ -9,6 +9,7 @@ import waveBcg from "./icons/wave-bcg.svg"
 import LogoIcone from "./icons/Logo-icone.svg"
 import AgroTruck from "./icons/AgroTruck.svg"
 import Home from './templates/home/home';
+import Perfil from './templates/perfil/perfil';
 import Loading from './templates/loading/Loading';
 
 const NavSide = () => {
@@ -30,7 +31,7 @@ const TemplateLoader = (path) => {
   if(path === "/") {
     return (<Home/>)
   } else if(path === "/perfil"){
-      //caregar componente de tela perfil
+      return (<Perfil/>)
   } else if(path === "/motorista"){
 
   } else if(path === "/pedido"){

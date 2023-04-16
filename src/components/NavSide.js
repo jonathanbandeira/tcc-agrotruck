@@ -15,7 +15,7 @@ const CustomNav = ({ li }) => {
     return (
         <nav
             className="navbar-menu"
-            style={{ width: window === false ? 250 : 60 }}
+            style={{ width: window === false ? 250 : 74 }}
         >
             <div className="burger" onClick={() => openClose()}>
                 <img src={menu} alt="burger" />
@@ -26,7 +26,7 @@ const CustomNav = ({ li }) => {
                         <img
                             src={item[1]}
                             alt={item[1]}
-                            style={{ paddingLeft: window === false ? 27 : 17 }}
+                            style={{ paddingLeft: window === false ? 0 : 0 }}
                         />
                         <li
                             className="navbar__li"
