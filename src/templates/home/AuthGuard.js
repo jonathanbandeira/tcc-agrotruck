@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function AuthGuard({ children }) {
+function AuthGuard( children ) {
   const history = useNavigate();
   
   useEffect(() => {
@@ -11,7 +11,7 @@ function AuthGuard({ children }) {
     }
   }, [history]);
   
-  return children;
+  return (children);
 }
 
 export default AuthGuard;

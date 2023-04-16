@@ -11,7 +11,7 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // verificar se o email e a senha estão corretos
-    if (email === "meuemail@email.com" && password === "1234") {
+    if (email === "email@email.com" && password === "1234") {
       // salvar o token de autenticação no localStorage
       localStorage.setItem("token", "meu_token_de_autenticacao");
       // redirecionar para a página de dashboard

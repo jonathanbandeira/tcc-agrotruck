@@ -8,6 +8,10 @@ const router = createBrowserRouter([
         element: <App path="/" />,
     },
     {
+        path: "/dashboard",
+        element: <App path={"/dashboard"} />,
+    },
+    {
         path: "/perfil",
         element: <App path={"/perfil"} />,
     },
@@ -18,6 +22,14 @@ const router = createBrowserRouter([
     {
         path: "/pedido",
         element: <App path="/pedido" />,
+    },
+    {
+        path: "/pedidoAtual",
+        element: <App path="/pedidoAtual" />,
+    },
+    {
+        path: "/cadastrarPedido",
+        element: <App path="/cadastrarPedido" />,
     },
 ]);
 

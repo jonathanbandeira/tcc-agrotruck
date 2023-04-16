@@ -1,15 +1,20 @@
 import './App.css';
 
-import dashboard from './icons/dashboard.svg'
-import restaurant from "./icons/restaurant.svg";
+import dashboard from './icons/dashboard.svg';
+import registerOrder from "./icons/register-order.svg";
 import manageUser from "./icons/manage-user.svg";
 import manageOrder from "./icons/manage-order.svg";
 import CustomNav from './components/NavSide';
-import waveBcg from "./icons/wave-bcg.svg"
-import LogoIcone from "./icons/Logo-icone.svg"
-import AgroTruck from "./icons/AgroTruck.svg"
+import waveBcg from "./icons/wave-bcg.svg";
+import LogoIcone from "./icons/Logo-icone.svg";
+import AgroTruck from "./icons/AgroTruck.svg";
+import driver from './icons/driver.svg';
 import Home from './templates/home/home';
+import Dashboard from './templates/dashboard/dashboard';
 import Perfil from './templates/perfil/perfil';
+import PedidoAtual from './templates/pedidoAtual/pedidoAtual';
+import CadastrarPedido from './templates/cadastrarPedido/cadastrarPedido';
+import Motorista from './templates/mototista/motorista';
 import Loading from './templates/loading/Loading';
 
 const NavSide = () => {
@@ -17,10 +22,11 @@ const NavSide = () => {
     <CustomNav
         li={[
             [<img style={{width: "90px", paddingLeft: "0px"}} src={AgroTruck}></img>, LogoIcone],
-            ["Motoristas", dashboard],
-            ["Cadastrar Pedido", restaurant],
-            ["Pedido Atual", manageOrder],
-            ["Perfil", manageUser]
+            ["Dashborad", dashboard, "/dashboard"],
+            ["Motoristas", driver, "/motorista"],
+            ["Cadastrar Pedido", registerOrder, "/cadastrarPedido"],
+            ["Pedido Atual", manageOrder, "/pedidoAtual"],
+            ["Perfil", manageUser, "/perfil"]
         ]}
     />
   )
@@ -30,12 +36,16 @@ const TemplateLoader = (path) => {
   console.log(path === "/", "pink")
   if(path === "/") {
     return (<Home/>)
+  } else if(path === "/dashboard"){
+    return (<Dashboard/>)
   } else if(path === "/perfil"){
-      return (<Perfil/>)
+    return (<Perfil/>)
   } else if(path === "/motorista"){
-
-  } else if(path === "/pedido"){
-
+    return (<Motorista/>)
+  } else if(path === "/pedidoAtual"){
+    return (<PedidoAtual/>)
+  } else if(path === "/cadastrarPedido"){
+    return (<CadastrarPedido/>)
   }
 }
 
