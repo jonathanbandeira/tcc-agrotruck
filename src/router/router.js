@@ -8,8 +8,13 @@ const router = createBrowserRouter([
         element: <App path="/" />,
     },
     {
+<<<<<<< HEAD
         path: "/register",
         element: <App path="/register" />,
+=======
+        path: "/dashboard",
+        element: <App path={"/dashboard"} />,
+>>>>>>> 6c3490c4db27bfe714bec0a1721b81158a1ae5f1
     },
     {
         path: "/perfil",
@@ -22,6 +27,14 @@ const router = createBrowserRouter([
     {
         path: "/pedido",
         element: <App path="/pedido" />,
+    },
+    {
+        path: "/pedidoAtual",
+        element: <App path="/pedidoAtual" />,
+    },
+    {
+        path: "/cadastrarPedido",
+        element: <App path="/cadastrarPedido" />,
     },
 ]);
 

@@ -1,15 +1,28 @@
 import './App.css';
 
-import dashboard from './icons/dashboard.svg'
-import restaurant from "./icons/restaurant.svg";
+import dashboard from './icons/dashboard.svg';
+import registerOrder from "./icons/register-order.svg";
 import manageUser from "./icons/manage-user.svg";
 import manageOrder from "./icons/manage-order.svg";
 import CustomNav from './components/NavSide';
+<<<<<<< HEAD:src/App.jsx
 import waveBcg from "./icons/wave-bcg.svg"
 import LogoIcone from "./icons/Logo-icone.svg"
 import AgroTruck from "./icons/AgroTruck.svg"
 import Home from "./templates/home/Home.jsx"
 import Register from "./templates/register/Register.jsx"
+=======
+import waveBcg from "./icons/wave-bcg.svg";
+import LogoIcone from "./icons/Logo-icone.svg";
+import AgroTruck from "./icons/AgroTruck.svg";
+import driver from './icons/driver.svg';
+import Home from './templates/home/home';
+import Dashboard from './templates/dashboard/dashboard';
+import Perfil from './templates/perfil/perfil';
+import PedidoAtual from './templates/pedidoAtual/pedidoAtual';
+import CadastrarPedido from './templates/cadastrarPedido/cadastrarPedido';
+import Motorista from './templates/mototista/motorista';
+>>>>>>> 6c3490c4db27bfe714bec0a1721b81158a1ae5f1:src/App.js
 import Loading from './templates/loading/Loading';
 
 const NavSide = () => {
@@ -17,10 +30,11 @@ const NavSide = () => {
     <CustomNav
         li={[
             [<img style={{width: "90px", paddingLeft: "0px"}} src={AgroTruck}></img>, LogoIcone],
-            ["Motoristas", dashboard],
-            ["Cadastrar Pedido", restaurant],
-            ["Pedido Atual", manageOrder],
-            ["Perfil", manageUser]
+            ["Dashborad", dashboard, "/dashboard"],
+            ["Motoristas", driver, "/motorista"],
+            ["Cadastrar Pedido", registerOrder, "/cadastrarPedido"],
+            ["Pedido Atual", manageOrder, "/pedidoAtual"],
+            ["Perfil", manageUser, "/perfil"]
         ]}
     />
   )
@@ -29,15 +43,24 @@ const NavSide = () => {
 const TemplateLoader = (path) => {
   if(path === "/") {
     return (<Home/>)
+<<<<<<< HEAD:src/App.jsx
   } else if(path === "/register"){
     return(<Register/>)
   }
    else if(path === "/perfil"){
       //caregar componente de tela perfil
+=======
+  } else if(path === "/dashboard"){
+    return (<Dashboard/>)
+  } else if(path === "/perfil"){
+    return (<Perfil/>)
+>>>>>>> 6c3490c4db27bfe714bec0a1721b81158a1ae5f1:src/App.js
   } else if(path === "/motorista"){
-
-  } else if(path === "/pedido"){
-
+    return (<Motorista/>)
+  } else if(path === "/pedidoAtual"){
+    return (<PedidoAtual/>)
+  } else if(path === "/cadastrarPedido"){
+    return (<CadastrarPedido/>)
   }
 }
 
