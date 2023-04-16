@@ -8,13 +8,12 @@ const router = createBrowserRouter([
         element: <App path="/" />,
     },
     {
-<<<<<<< HEAD
         path: "/register",
         element: <App path="/register" />,
-=======
+    },
+    {
         path: "/dashboard",
         element: <App path={"/dashboard"} />,
->>>>>>> 6c3490c4db27bfe714bec0a1721b81158a1ae5f1
     },
     {
         path: "/perfil",

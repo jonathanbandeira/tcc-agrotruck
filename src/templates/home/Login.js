@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Col } from "react-bootstrap";
+import "./login.css"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -22,21 +23,37 @@ function Login() {
   };
   
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Digite o seu email" value={email} onChange={handleEmailChange} />
-      </Form.Group>
-  
-      <Form.Group controlId="formBasicPassword">
-        <Form.Label>Senha</Form.Label>
-        <Form.Control type="password" placeholder="Digite a sua senha" value={password} onChange={handlePasswordChange} />
-      </Form.Group>
-  
-      <Button variant="primary" type="submit">
-        Entrar
-      </Button>
-    </Form>
+      <div className="login">
+          <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="formBasicEmail">
+                  <Form.Label>Email</Form.Label>
+                  <Col lg="6">
+                      <Form.Control
+                          type="email"
+                          placeholder="Digite o seu email"
+                          value={email}
+                          onChange={handleEmailChange}
+                      />
+                  </Col>
+              </Form.Group>
+
+              <Form.Group controlId="formBasicPassword">
+                  <Form.Label>Senha</Form.Label>
+                  <Col lg="6">
+                      <Form.Control
+                          type="password"
+                          placeholder="Digite a sua senha"
+                          value={password}
+                          onChange={handlePasswordChange}
+                      />
+                  </Col>
+              </Form.Group>
+
+              <Button variant="primary" type="submit">
+                  Entrar
+              </Button>
+          </Form>
+      </div>
   );
 }
 

@@ -5,7 +5,6 @@ import Login from "./Login";
 import "./AuthGuard";
 import "./Login"
 
-
 const Home = () => {
     return (
         <div>
