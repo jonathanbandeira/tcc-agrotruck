@@ -11,7 +11,6 @@ import LogoIcone from "./icons/Logo-icone.svg";
 import AgroTruck from "./icons/AgroTruck.svg";
 import driver from './icons/driver.svg';
 import Home from './templates/home/Home';
-import Dashboard from './templates/dashboard/dashboard';
 import Perfil from './templates/perfil/perfil';
 import PedidoAtual from './templates/pedidoAtual/pedidoAtual';
 import CadastrarPedido from './templates/cadastrarPedido/cadastrarPedido';
@@ -23,7 +22,6 @@ const NavSide = () => {
     <CustomNav
         li={[
             [<img style={{width: "90px", paddingLeft: "0px"}} src={AgroTruck}></img>, LogoIcone],
-            ["Dashborad", dashboard, "/dashboard"],
             ["Motoristas", driver, "/motorista"],
             ["Cadastrar Pedido", registerOrder, "/cadastrarPedido"],
             ["Pedido Atual", manageOrder, "/pedidoAtual"],
@@ -38,8 +36,6 @@ const TemplateLoader = (path) => {
     return (<Home/>)
   } else if(path === "/register"){
     return(<Register/>)
-  } else if(path === "/dashboard"){
-    return (<Dashboard/>)
   } else if(path === "/perfil"){
     return (<Perfil/>)
   } else if(path === "/motorista"){
