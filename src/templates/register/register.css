@@ -48,7 +48,7 @@
     padding: 0.5em 2em 0 12em;
 }
 .title h1{
-    margin-top: 0.6em;
+    margin-top: 0.4em;
     color: green;
     font-size: 3em;
 }
@@ -56,29 +56,9 @@
     display: block;
     margin-left: auto;
 }
-.buttons button, .button{
-    text-decoration: none;
-    background-color: #008000; /*008000*/
-    display: inline-block;
-    margin: 5px;
-    width: 100px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
-    color: white;
-    font-size: 1.2em;
-    height: 30px;
-    cursor: pointer;
-    border: none;
-}
 
-.buttons{
+.buttons-register{
     position: absolute;
     left: 35%;
     bottom: 25px;
-}
-
-.buttons button:hover, .button:hover{
-    background-color: #025f02;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25)
 }

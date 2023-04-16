@@ -1,2 +1,15 @@
 .login{
+    position: relative;
+    bottom: -46vh;
+    right: 16vw;
+}
+
+.login label{
+    color: white;
+}
+
+.buttons-login{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
 }

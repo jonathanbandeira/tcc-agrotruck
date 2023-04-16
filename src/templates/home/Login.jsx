@@ -48,10 +48,13 @@ function Login() {
                       />
                   </Col>
               </Form.Group>
+              <Col lg="6">
+                    <div className="buttons-login">
+                        <input className="button" type="submit" value="Entrar"/>
+                        <a href="/register" className="button">Cadastre-se</a>
 
-              <Button variant="primary" type="submit">
-                  Entrar
-              </Button>
+                    </div>
+              </Col>
           </Form>
       </div>
   );

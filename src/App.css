@@ -18,3 +18,38 @@
 .container{
     padding-left: 60px;
 }
+
+.title{
+    padding: 0.5em 2em 0 12em;
+}
+.title h1{
+    margin-top: 2em;
+    color: green;
+    font-size: 3em;
+}
+.title img{
+    display: block;
+    margin-left: auto;
+}
+
+button, .button{
+    text-decoration: none !important;
+    background-color: #008000 !important;
+    display: inline-block !important;
+    margin: 5px !important;
+    min-width: 100px !important;
+    text-align: center !important;
+    border-radius: 5px !important;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25) !important;
+    color: white !important;
+    font-size: 1.2em !important;
+    height: 30px !important;
+    cursor: pointer !important;
+    border: none !important;
+    height: 30px !important;
+    padding: 0 10px 0 10px !important;
+}
+button:hover, .button:hover{
+    background-color: #025f02 !important;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25) !important
+}

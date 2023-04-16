@@ -153,7 +153,7 @@ const Register = () => {
             <div className="container-register">
                 {step_component()}
             </div>
-            <div style={{display: step === 4 && "none"}} className="buttons">
+            <div style={{display: step === 4 && "none"}} className="buttons-register">
                 <button onClick={() => changeStep("previous")} id="button">voltar</button>
                 <button onClick={() => changeStep("next")} id="button">Próximo</button>
             </div>
