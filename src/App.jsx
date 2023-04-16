@@ -8,7 +8,8 @@ import CustomNav from './components/NavSide';
 import waveBcg from "./icons/wave-bcg.svg"
 import LogoIcone from "./icons/Logo-icone.svg"
 import AgroTruck from "./icons/AgroTruck.svg"
-import Home from './templates/home/home';
+import Home from "./templates/home/Home.jsx"
+import Register from "./templates/register/Register.jsx"
 import Loading from './templates/loading/Loading';
 
 const NavSide = () => {
@@ -26,10 +27,12 @@ const NavSide = () => {
 }
 
 const TemplateLoader = (path) => {
-  console.log(path === "/", "pink")
   if(path === "/") {
     return (<Home/>)
-  } else if(path === "/perfil"){
+  } else if(path === "/register"){
+    return(<Register/>)
+  }
+   else if(path === "/perfil"){
       //caregar componente de tela perfil
   } else if(path === "/motorista"){
 
@@ -42,7 +45,7 @@ const  App = ({path}) => {
   return (
       <div className="App">
         <img className='background' src={waveBcg}></img>
-        {path !== "/" &&
+        {path !== "/" && path !== "/register" &&
           NavSide()
         }
         <div className='container'>
