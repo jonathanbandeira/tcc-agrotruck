@@ -10,3 +10,37 @@
     display: block;
     margin-left: auto;
 } */
+
+.title-motorista{
+    color: green;
+    text-align: center;
+}
+
+.sidebar {
+  position: absolute;
+  margin: 20px 20px 30px 20px;
+  width: 25%;
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+  background-color: #fff;
+  overflow-y: scroll;
+  right: 0;
+}
+
+.box{
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+    box-shadow: 5px 5px 5px 0px rgba(204,204,204,1);
+    padding: 20px;
+}
+
+.checked {
+    color: orange;
+}
+
+.mot{
+    margin: 2em auto 0 auto;
+    bottom: 0;
+    text-align: right;
+}

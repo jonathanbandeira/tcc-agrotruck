@@ -29,7 +29,7 @@ const Motorista = () => {
         
         );
     }, [mapDiv])
-    
+
     return AuthGuard(
             <div>
                 <div className="title">
@@ -46,6 +46,39 @@ const Motorista = () => {
                     left: 0
                 }}
                 ></div>
+                <div id="map"></div>
+                    <div class="sidebar">
+                        <h1 class="title-motorista">Escolher Motorista</h1>
+                        <div class="box">
+                            <p>Motorista 01</p>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="box">
+                            <p>Motorista 02</p>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="box">
+                            <p>Motorista 03</p>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                        
+                    <div id="reports"></div>
+                    <div className="mot">
+                        <a  className="button" href="/">Voltar para o menu principal</a>
+                    </div>
+                </div>
             </div>
         
 
