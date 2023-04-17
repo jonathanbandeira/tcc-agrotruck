@@ -21,7 +21,7 @@ const NavSide = () => {
   return(
     <CustomNav
         li={[
-            [<img style={{width: "90px", paddingLeft: "0px"}} src={AgroTruck}></img>, LogoIcone],
+            [<img alt="" style={{width: "90px", paddingLeft: "0px"}} src={AgroTruck}></img>, LogoIcone],
             ["Procurar motoristas", driver, "/motorista"],
             ["Cadastrar Pedido", registerOrder, "/cadastrarPedido"],
             ["Pedido Atual", manageOrder, "/pedidoAtual"],
