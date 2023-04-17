@@ -22,7 +22,7 @@ const NavSide = () => {
     <CustomNav
         li={[
             [<img style={{width: "90px", paddingLeft: "0px"}} src={AgroTruck}></img>, LogoIcone],
-            ["Motoristas", driver, "/motorista"],
+            ["Procurar motoristas", driver, "/motorista"],
             ["Cadastrar Pedido", registerOrder, "/cadastrarPedido"],
             ["Pedido Atual", manageOrder, "/pedidoAtual"],
             ["Perfil", manageUser, "/perfil"]
