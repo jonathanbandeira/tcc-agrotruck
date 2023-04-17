@@ -15,9 +15,19 @@ const Motorista = () => {
         const map_init = new mapboxgl.Map({
             container: mapDiv?.current, // container ID
             style: "mapbox://styles/h1bertoh/clgk12411001401pdq7p8acg2", // style URL
-            center: [-74.5, 40], // starting position [lng, lat]
+            center: [-40.3381, -20.3222], // starting position [lng, lat]
             zoom: 9, // starting zoom
         });
+
+        map_init.addControl(
+            // eslint-disable-next-line no-undef
+            new MapboxDirections({
+                accessToken: mapboxgl.accessToken,
+                
+            }),
+            'top-left',
+        
+        );
     }, [mapDiv])
     
     return AuthGuard(
