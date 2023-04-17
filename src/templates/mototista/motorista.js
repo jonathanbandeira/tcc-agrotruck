@@ -49,6 +49,7 @@ const Motorista = () => {
                 <div id="map"></div>
                     <div class="sidebar">
                         <h1 class="title-motorista">Escolher Motorista</h1>
+                        <a href="#">
                         <div class="box">
                             <p>Motorista 01</p>
                             <span class="fa fa-star checked"></span>
@@ -57,6 +58,8 @@ const Motorista = () => {
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star"></span>
                         </div>
+                        </a>
+                        <a href="#">
                         <div class="box">
                             <p>Motorista 02</p>
                             <span class="fa fa-star checked"></span>
@@ -65,6 +68,8 @@ const Motorista = () => {
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                         </div>
+                        </a>
+                        <a href="#">
                         <div class="box">
                             <p>Motorista 03</p>
                             <span class="fa fa-star checked"></span>
@@ -73,6 +78,7 @@ const Motorista = () => {
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                         </div>
+                        </a>
                         
                     <div id="reports"></div>
                     <div className="mot">
