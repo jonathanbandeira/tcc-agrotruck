@@ -12,11 +12,11 @@ const EmpListing = () => {
         navigate("/employee/edit/" + id);
     }
     const Removefunction = (id) => {
-        if (window.confirm('Do you want to remove?')) {
+        if (window.confirm('Deseja remover?')) {
             fetch("/employee/" + id, {
                 method: "DELETE"
             }).then((res) => {
-                alert('Removed successfully.')
+                alert('Removido com sucesso.')
                 window.location.reload();
             }).catch((err) => {
                 console.log(err.message)
@@ -40,20 +40,20 @@ const EmpListing = () => {
         <div className="container">
             <div className="card">
                 <div className="card-title">
-                    <h2>Employee Listing</h2>
+                    <h2>Listar</h2>
                 </div>
                 <div className="card-body">
                     <div className="divbtn">
-                        <Link to="employee/create" className="btn btn-success">Add New (+)</Link>
+                        <Link to="/employee/EmpCreate" className="btn btn-success">Adicionar novo (+)</Link>
                     </div>
                     <table className="table table-bordered">
                         <thead className="bg-dark text-white">
                             <tr>
                                 <td>ID</td>
-                                <td>Name</td>
+                                <td>Nome</td>
                                 <td>Email</td>
-                                <td>Phone</td>
-                                <td>Action</td>
+                                <td>Telefone</td>
+                                <td>Ação</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,9 +65,9 @@ const EmpListing = () => {
                                         <td>{item.name}</td>
                                         <td>{item.email}</td>
                                         <td>{item.phone}</td>
-                                        <td><a onClick={() => { LoadEdit(item.id) }} className="btn btn-success">Edit</a>
-                                            <a onClick={() => { Removefunction(item.id) }} className="btn btn-danger">Remove</a>
-                                            <a onClick={() => { LoadDetail(item.id) }} className="btn btn-primary">Details</a>
+                                        <td><a onClick={() => { LoadEdit(item.id) }} className="btn btn-success">Editar</a>
+                                            <a onClick={() => { Removefunction(item.id) }} className="btn btn-danger">Remover</a>
+                                            <a onClick={() => { LoadDetail(item.id) }} className="btn btn-primary">Detalhes</a>
                                         </td>
                                     </tr>
                                 ))
@@ -76,6 +76,7 @@ const EmpListing = () => {
                         </tbody>
 
                     </table>
+                    
                 </div>
             </div>
         </div>

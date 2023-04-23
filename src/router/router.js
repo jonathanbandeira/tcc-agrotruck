@@ -8,12 +8,16 @@ const router = createBrowserRouter([
         element: <App path="/" />,
     },
     {
+        path: "/principal",
+        element: <App path={"/principal"} />,
+    },
+    {
         path: "/register",
         element: <App path="/register" />,
     },
     {
         path: "/perfil",
-        element: <App path={"/perfil"} />,
+        element: <App path="/perfil" />,
     },
     {
         path: "/motorista",
@@ -31,6 +35,26 @@ const router = createBrowserRouter([
         path: "/cadastrarPedido",
         element: <App path="/cadastrarPedido" />,
     },
+    {
+        path: "/employee",
+        element: <App path="/employee" />,
+    },
+    {
+        path: "/employee/EmpCreate",
+        element: <App path="/employee/EmpCreate" />,
+    },
+    {
+        path: "/employee/EmpDetail",
+        element: <App path="/employee/EmpDetail" />,
+    },
+    {
+        path: "/employee/EmpDetail",
+        element: <App path="/employee/EmpDetail" />,
+    },
+    {
+        path: "/employee/EmpListing",
+        element: <App path="/employee/EmpListing" />,
+    }
 ]);
 
 const Router = () => {

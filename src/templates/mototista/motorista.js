@@ -30,6 +30,8 @@ const Motorista = () => {
         );
     }, [mapDiv])
 
+    
+
     return AuthGuard(
             <div>
                 <div className="title">
@@ -82,7 +84,7 @@ const Motorista = () => {
                         
                     <div id="reports"></div>
                     <div className="mot">
-                        <a  className="button" href="/">Voltar para o menu principal</a>
+                        <a  className="button" href="/principal">Voltar para o menu principal</a>
                     </div>
                 </div>
             </div>
