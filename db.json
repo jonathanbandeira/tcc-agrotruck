@@ -1,0 +1,77 @@
+{
+  "users":
+            [
+              {
+                  "id": "10",
+                  "name": "Harjas Malhotra",
+                  "email": "harjas@gmail.com",
+                  "job_title": "CEO&Founder",
+                  "created_at": "2021-01-31 00:07:38",
+                  "updated_at": "2021-01-31 00:07:38"
+              },
+              {
+                  "id": "9",
+                  "name": "Alisha Paul",
+                  "email": "alisha@gmail.com",
+                  "job_title": "CTO",
+                  "created_at": "2021-01-31 00:07:38",
+                  "updated_at": "2021-01-31 00:07:38"
+              },
+              {
+                  "id": "8",
+                  "name": "Mart Right",
+                  "email": "marrk9658@yahoo.com",
+                  "job_title": "Fresher",
+                  "created_at": "2021-01-31 00:06:25",
+                  "updated_at": "2021-01-31 00:06:25"
+              },
+              {
+                  "id": "7",
+                  "name": "Brad Pitter",
+                  "email": "brad@gmail.com",
+                  "job_title": "Junior Developer",
+                  "created_at": "2021-01-31 00:06:25",
+                  "updated_at": "2021-01-31 00:06:25"
+              },
+              {
+                  "id": "6",
+                  "name": "Ervin Dugg",
+                  "email": "Ervin69@gmail.com",
+                  "job_title": "HR",
+                  "created_at": "2021-01-29 23:16:26",
+                  "updated_at": "2021-01-29 23:16:26"
+              },
+              {
+                  "id": "5",
+                  "name": "Graham Bell",
+                  "email": "Graham@bell.biz",
+                  "job_title": "Seo Expert",
+                  "created_at": "2021-01-29 23:16:26",
+                  "updated_at": "2021-01-29 23:16:26"
+              },
+              {
+                  "id": "4",
+                  "name": "James Rush",
+                  "email": "james369@hotmail.com",
+                  "job_title": "Junior Developer",
+                  "created_at": "2021-01-29 23:14:55",
+                  "updated_at": "2021-01-29 23:14:55"
+              },
+              {
+                  "id": "3",
+                  "name": "Deepak Dev",
+                  "email": "deepak@gmail.com",
+                  "job_title": "Senior Developer",
+                  "created_at": "2021-01-29 11:36:14",
+                  "updated_at": "2021-01-29 11:36:14"
+              },
+              {
+                  "id": "1",
+                  "name": "Ajay Rich",
+                  "email": "therichposts@gmail.com",
+                  "job_title": "Full Stack Developer",
+                  "created_at": "2021-01-29 11:36:14",
+                  "updated_at": "2021-01-29 11:36:14"
+              }
+          ]
+}

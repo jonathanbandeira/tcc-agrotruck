@@ -19,14 +19,24 @@ const Principal = () => {
                             <p className="title-menu">Procurar Motoristas</p>
                         </div>
                     </a>
+                    <a href="/perfil">   
+                        <div className="card-menu">
+                            <p className="title-menu">Perfil</p>
+                        </div>
+                    </a>
                     <a href="/employee/EmpCreate">   
                         <div className="card-menu">
                             <p className="title-menu">Cadastrar Pedido</p>
                         </div>
                     </a>
-                    <a href="/perfil">   
+                    <a href="/employee/EmpListing">   
                         <div className="card-menu">
-                            <p className="title-menu">Perfil</p>
+                            <p className="title-menu">Meus Pedidos</p>
+                        </div>
+                    </a>
+                    <a href="/">   
+                        <div className="card-menu">
+                            <p className="title-menu">Logout</p>
                         </div>
                     </a>
                 </div>

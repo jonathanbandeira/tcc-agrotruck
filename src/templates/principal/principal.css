@@ -27,8 +27,8 @@
 } 
 
 :root {
-    --cardWidth: 400px;
-    --cardHeight: 400px;
+    --cardWidth: 325px;
+    --cardHeight: 325px;
     --cardMargin: 10px;
  
   }

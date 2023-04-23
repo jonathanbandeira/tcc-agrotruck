@@ -1,86 +1,85 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import Logo from "../../icons/Logo-completo.svg";
+import "./cadastrarPedido.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect, useState } from 'react'
+import Axios from "axios";
 
-const EmpListing = () => {
-    const [empdata, empdatachange] = useState(null);
-    const navigate = useNavigate();
-
-    const LoadDetail = (id) => {
-        navigate("/employee/detail/" + id);
-    }
-    const LoadEdit = (id) => {
-        navigate("/employee/edit/" + id);
-    }
-    const Removefunction = (id) => {
-        if (window.confirm('Deseja remover?')) {
-            fetch("/employee/" + id, {
-                method: "DELETE"
-            }).then((res) => {
-                alert('Removido com sucesso.')
-                window.location.reload();
-            }).catch((err) => {
-                console.log(err.message)
-            })
-        }
-    }
+const Perfil = () => {
+    let users = []
+    const url = 'http://localhost:3000/users';
+    Axios.get(url).then((e) => users = e.data)
 
 
-
-
+    const [Users, fetchUsers] = useState([])
     useEffect(() => {
-        fetch("/employee").then((res) => {
-            return res.json();
-        }).then((resp) => {
-            empdatachange(resp);
-        }).catch((err) => {
-            console.log(err.message);
+        fetch('http://localhost:3000/users')
+        .then((res) => res.json())
+        .then((res) => {
+            fetchUsers(res)
+            console.log(res);
         })
-    }, [])
+    }, []);
     return (
-        <div className="container">
-            <div className="card">
-                <div className="card-title">
-                    <h2>Listar</h2>
-                </div>
-                <div className="card-body">
-                    <div className="divbtn">
-                        <Link to="/employee/EmpCreate" className="btn btn-success">Adicionar novo (+)</Link>
-                    </div>
-                    <table className="table table-bordered">
-                        <thead className="bg-dark text-white">
-                            <tr>
-                                <td>ID</td>
-                                <td>Nome</td>
-                                <td>Email</td>
-                                <td>Telefone</td>
-                                <td>Ação</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            {empdata &&
-                                empdata.map(item => (
-                                    <tr key={item.id}>
-                                        <td>{item.id}</td>
-                                        <td>{item.name}</td>
-                                        <td>{item.email}</td>
-                                        <td>{item.phone}</td>
-                                        <td><a onClick={() => { LoadEdit(item.id) }} className="btn btn-success">Editar</a>
-                                            <a onClick={() => { Removefunction(item.id) }} className="btn btn-danger">Remover</a>
-                                            <a onClick={() => { LoadDetail(item.id) }} className="btn btn-primary">Detalhes</a>
-                                        </td>
-                                    </tr>
-                                ))
-                            }
-
-                        </tbody>
-
-                    </table>
-                    
-                </div>
-            </div>
+       
+        <div>
+        <div>
+        <div>
+        
+       
+        <div className="title">
+            <img src={Logo}></img>
+                <h1>Meus Pedidos</h1>
         </div>
-    );
+                            <br></br>
+                        <div className="card" style={{"textAlign":"left"}}>
+                        <div>
+        <table className="table">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Job Title</th>
+                </tr>
+            </thead>
+            <tbody>
+            {Users.map((item, i) => {
+                                return <tr>
+                                    <td>{item.id}</td>
+                                    <td>{item.name}</td>
+                                    <td>{item.email}</td>
+                                    <td>{item.job_title}</td>
+                                </tr>      
+                                       })}
+                <tr>
+               
+                </tr>
+            </tbody>
+            </table>
+       
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+    )
 }
 
-export default EmpListing;
+    
+//     return AuthGuard(
+//             <div>
+//                 <div className="title">
+//                     <img src={Logo}></img>
+//                     <h1>Perfil</h1>
+                    
+//                 </div>
+//             </div>
+        
+
+//     )
+// }
+
+export default Perfil;
+
+
