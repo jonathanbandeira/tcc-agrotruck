@@ -7,52 +7,51 @@ import React, { useEffect, useState } from 'react'
 import Axios from "axios";
 
 const Perfil = () => {
-    let users = []
-    const url = 'http://localhost:3000/users';
-    Axios.get(url).then((e) => users = e.data)
+  const [users, setUsers] = useState([]);
 
+  useEffect(() => {
+    Axios.get('https://api.jonatanbandeira.repl.co/users')
+      .then(response => {
+        setUsers(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
 
-    const [Users, fetchUsers] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:3000/users')
-        .then((res) => res.json())
-        .then((res) => {
-            fetchUsers(res)
-            console.log(res);
-        })
-    }, []);
-    return (
-       <div className="container p-5">
-        <h1 className='mb-5'>Reactjs Fetch Api Data from Json Server</h1>
-       
-        <table className="table">
-            <thead>
-                <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Job Title</th>
-                </tr>
-            </thead>
-            <tbody>
-            {Users.map((item, i) => {
-                                return <tr>
-                                    <td>{item.id}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.email}</td>
-                                    <td>{item.job_title}</td>
-                                </tr>      
-                                       })}
-                <tr>
-               
-                </tr>
-            </tbody>
-            </table>
-       </div>
-    )
-}
+  return (
+    <div className="container p-5">
+      <h1 className="mb-5">Perfil</h1>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome Completo</th>
+            <th scope="col">Email</th>
+            <th scope="col">Senha</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Data de Nascimento</th>
+            <th scope="col">CPF</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(item => (
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.full_name}</td>
+              <td>{item.email}</td>
+              <td>{item.password}</td>
+              <td>{item.tel}</td>
+              <td>{item.birthday}</td>
+              <td>{item.cpf}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
-    
 //     return AuthGuard(
 //             <div>
 //                 <div className="title">
@@ -66,6 +65,9 @@ const Perfil = () => {
 //     )
 // }
 
+
 export default Perfil;
+
+
 
 
