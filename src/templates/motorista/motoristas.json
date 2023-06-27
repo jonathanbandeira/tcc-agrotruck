@@ -1,0 +1,229 @@
+{
+    "motoristas": [
+        {
+            "id": 1,
+            "fullname": "João Silva",
+            "email": "joao.silva@example.com",
+            "password": "senha123",
+            "telefone": "(11) 1234-5678",
+            "birthday": "1985-03-15",
+            "cpf": "123.456.789-00",
+            "tipo_caminhao": "Caminhão baú",
+            "modelo_caminhao": "VW Delivery",
+            "tamanho_caminhao": "Médio",
+            "estrelas": 4.5,
+            "comentarios": [
+                {
+                    "id_usuario": 1,
+                    "nome": "Usuário 1",
+                    "comentario": "Bom motorista!"
+                },
+                {
+                    "id_usuario": 2,
+                    "nome": "Usuário 2",
+                    "comentario": "Sempre pontual."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "fullname": "Maria Santos",
+            "email": "maria.santos@example.com",
+            "password": "senha456",
+            "telefone": "(11) 9876-5432",
+            "birthday": "1990-07-20",
+            "cpf": "987.654.321-00",
+            "tipo_caminhao": "Caminhão tanque",
+            "modelo_caminhao": "Scania R440",
+            "tamanho_caminhao": "Grande",
+            "estrelas": 3.8,
+            "comentarios": [
+                {
+                    "id_usuario": 3,
+                    "nome": "Usuário 3",
+                    "comentario": "Ótima profissional!"
+                },
+                {
+                    "id_usuario": 4,
+                    "nome": "Usuário 4",
+                    "comentario": "Atenciosa e cuidadosa."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "fullname": "Carlos Oliveira",
+            "email": "carlos.oliveira@example.com",
+            "password": "senha789",
+            "telefone": "(21) 1111-2222",
+            "birthday": "1988-11-03",
+            "cpf": "555.444.333-22",
+            "tipo_caminhao": "Caminhão plataforma",
+            "modelo_caminhao": "Volvo FH460",
+            "tamanho_caminhao": "Grande",
+            "estrelas": 4.2,
+            "comentarios": [
+                {
+                    "id_usuario": 5,
+                    "nome": "Usuário 5",
+                    "comentario": "Excelente profissional!"
+                },
+                {
+                    "id_usuario": 6,
+                    "nome": "Usuário 6",
+                    "comentario": "Entrega sempre no prazo."
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "fullname": "Ana Souza",
+            "email": "ana.souza@example.com",
+            "password": "senha987",
+            "telefone": "(21) 3333-4444",
+            "birthday": "1992-05-10",
+            "cpf": "777.888.999-11",
+            "tipo_caminhao": "Caminhão basculante",
+            "modelo_caminhao": "Mercedes-Benz Atego",
+            "tamanho_caminhao": "Médio",
+            "estrelas": 4.7,
+            "comentarios": [
+                {
+                    "id_usuario": 7,
+                    "nome": "Usuário 7",
+                    "comentario": "Ótima motorista!"
+                },
+                {
+                    "id_usuario": 8,
+                    "nome": "Usuário 8",
+                    "comentario": "Responsável e cuidadosa."
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "fullname": "Fernanda Oliveira",
+            "email": "fernanda.oliveira@example.com",
+            "password": "senha654",
+            "telefone": "(11) 3333-2222",
+            "birthday": "1995-02-18",
+            "cpf": "555.888.222-99",
+            "tipo_caminhao": "Caminhão baú",
+            "modelo_caminhao": "Ford Cargo 815",
+            "tamanho_caminhao": "Médio",
+            "estrelas": 3.9,
+            "comentarios": [
+                {
+                    "id_usuario": 11,
+                    "nome": "Usuário 11",
+                    "comentario": "Atendeu minhas expectativas."
+                },
+                {
+                    "id_usuario": 12,
+                    "nome": "Usuário 12",
+                    "comentario": "Bom custo-benefício."
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "fullname": "Pedro Santos",
+            "email": "pedro.santos@example.com",
+            "password": "senha123",
+            "telefone": "(31) 5555-6666",
+            "birthday": "1984-09-22",
+            "cpf": "111.222.333-44",
+            "tipo_caminhao": "Caminhão graneleiro",
+            "modelo_caminhao": "Scania R500",
+            "tamanho_caminhao": "Grande",
+            "estrelas": 4.9,
+            "comentarios": [
+                {
+                    "id_usuario": 13,
+                    "nome": "Usuário 13",
+                    "comentario": "Motorista muito competente!"
+                },
+                {
+                    "id_usuario": 14,
+                    "nome": "Usuário 14",
+                    "comentario": "Rápido e eficiente."
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "fullname": "Luciana Oliveira",
+            "email": "luciana.oliveira@example.com",
+            "password": "senha456",
+            "telefone": "(31) 7777-8888",
+            "birthday": "1991-12-10",
+            "cpf": "555.999.777-88",
+            "tipo_caminhao": "Caminhão sider",
+            "modelo_caminhao": "Iveco Stralis",
+            "tamanho_caminhao": "Médio",
+            "estrelas": 4.6,
+            "comentarios": [
+                {
+                    "id_usuario": 15,
+                    "nome": "Usuário 15",
+                    "comentario": "Ótimo atendimento!"
+                },
+                {
+                    "id_usuario": 16,
+                    "nome": "Usuário 16",
+                    "comentario": "Caminhão bem conservado."
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "fullname": "Ricardo Mendes",
+            "email": "ricardo.mendes@example.com",
+            "password": "senha789",
+            "telefone": "(21) 4444-5555",
+            "birthday": "1986-07-05",
+            "cpf": "666.777.888-99",
+            "tipo_caminhao": "Caminhão cegonha",
+            "modelo_caminhao": "Volvo FH540",
+            "tamanho_caminhao": "Grande",
+            "estrelas": 4.4,
+            "comentarios": [
+                {
+                    "id_usuario": 17,
+                    "nome": "Usuário 17",
+                    "comentario": "Entrega segura."
+                },
+                {
+                    "id_usuario": 18,
+                    "nome": "Usuário 18",
+                    "comentario": "Bom preço e pontualidade."
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "fullname": "Mariana Rodrigues",
+            "email": "mariana.rodrigues@example.com",
+            "password": "senha987",
+            "telefone": "(21) 9999-0000",
+            "birthday": "1993-03-28",
+            "cpf": "777.666.555-44",
+            "tipo_caminhao": "Caminhão tanque",
+            "modelo_caminhao": "Mercedes-Benz Actros",
+            "tamanho_caminhao": "Grande",
+            "estrelas": 4.7,
+            "comentarios": [
+                {
+                    "id_usuario": 19,
+                    "nome": "Usuário 19",
+                    "comentario": "Ótima profissional!"
+                },
+                {
+                    "id_usuario": 20,
+                    "nome": "Usuário 20",
+                    "comentario": "Muito atenciosa."
+                }
+            ]
+        }
+    ]
+}

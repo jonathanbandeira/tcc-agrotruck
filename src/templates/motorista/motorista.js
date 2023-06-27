@@ -4,11 +4,77 @@ import 'bootstrap/dist/css/bootstrap.css';
 import AuthGuard from "../home/AuthGuard";
 import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl"; // or "const mapboxgl = require('mapbox-gl');"
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
+import axios from 'axios'
+import motoristas from "./motoristas.json"
+
+let id_motorista = null
+
+const motoristasController = () => {
+    if(id_motorista){
+        listarComentarios()
+    } 
+}
+
+function listarComentarios() {
+}
+
+const getMotoristas = async () => {
+    console.log("nhain")
+    console.log(motoristas, "chupa ku")
+    const response = await fetch("./motoristas.json")
+    // .then((e) => console.log(e.json()))
+    let d = await response.json()
+    return response
+
+}
+
+const ListarMotoristas = () => {
+    const [listamotoristas, setMotoristas] = useState([]);
+        useEffect(() => {
+            try {
+                setMotoristas(motoristas.motoristas)
+                console.log(listamotoristas)
+                // console.log(response)
+                // const data = await response.json();
+                // setMotoristas(data.motoristas);
+                // console.log(setMotoristas)
+            } catch (error) {
+                console.error("Erro ao carregar os motoristas:", error);
+            }
+
+        }, [])
+        
+    return (
+        <>
+            {   listamotoristas.length &&
+                listamotoristas.map((m) => {
+                    return (
+                        <div className="box">
+                        <p>{m.fullname}</p>
+                         <div className="star-rating">
+                            {[...Array(5)].map((_, starIndex) => (
+                            <><span
+                                    key={starIndex}
+                                    className={`fa fa-star ${starIndex < m.estrelas ? "checked" : ""}`}
+                                ></span></>
+                            ))}
+                            <span>({m.estrelas})</span>
+                        </div>
+                    </div>
+
+                    )
+                })
+            }
+        </>
+    )
+}
+// listarMotoristas()
 
 const Motorista = () => {
     const mapDiv = useRef(null)
     
+
     useEffect(() => {
         mapboxgl.accessToken =
             "pk.eyJ1IjoiaDFiZXJ0b2giLCJhIjoiY2tqOThpOGw2NDI0czJ5cXQxbXhtdDR4NSJ9.T4acMmPSql-dGgRAMVSU3A";
@@ -51,36 +117,7 @@ const Motorista = () => {
                 <div id="map"></div>
                     <div class="sidebar">
                         <h1 class="title-motorista">Escolher Motorista</h1>
-                        <a href="#">
-                        <div class="box">
-                            <p>Motorista 01</p>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        </a>
-                        <a href="#">
-                        <div class="box">
-                            <p>Motorista 02</p>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        </a>
-                        <a href="#">
-                        <div class="box">
-                            <p>Motorista 03</p>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                        </div>
-                        </a>
+                        {motoristas ? ListarMotoristas() : null}
                         
                     <div id="reports"></div>
                     <div className="mot">

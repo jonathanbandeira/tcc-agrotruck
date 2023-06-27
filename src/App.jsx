@@ -15,7 +15,7 @@ import Principal from './templates/principal/principal';
 import Perfil from './templates/perfil/perfil';
 import PedidoAtual from './templates/pedidoAtual/pedidoAtual';
 import CadastrarPedido from './templates/cadastrarPedido/cadastrarPedido';
-import Motorista from './templates/mototista/motorista';
+import Motorista from './templates/motorista/motorista';
 import EmpCreate from './templates/cadastrarPedido/EmpCreate';
 import EmpDetail from './templates/cadastrarPedido/EmpDetail';
 import EmpEdit from './templates/cadastrarPedido/EmpEdit';
