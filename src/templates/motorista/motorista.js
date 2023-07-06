@@ -1,79 +1,98 @@
 import Logo from "../../icons/Logo-completo.svg";
 import "./motorista.css";
-import 'bootstrap/dist/css/bootstrap.css';
-import AuthGuard from "../home/AuthGuard";
 import "mapbox-gl/dist/mapbox-gl.css";
-import mapboxgl from "mapbox-gl"; // or "const mapboxgl = require('mapbox-gl');"
-import { useEffect, useState, useRef } from "react";
-import axios from 'axios'
-import motoristas from "./motoristas.json"
+import mapboxgl from "mapbox-gl";
+import { useEffect, useRef, useState } from "react";
+import motoristas from "./motoristas.json";
 
-let id_motorista = null
+import React from "react";
 
-const motoristasController = () => {
-    if(id_motorista){
-        listarComentarios()
-    } 
-}
+const MotoristaInfo = ({id}) => {
+    // const motorista = await motoristas.motoristas.filter(m => m.id === id)[0]
+    console.log(id, "moto")
+    const {fullname, email, telefone, birthday, cpf, tipo_caminhao, modelo_caminhao, tamanho_caminhao, estrelas, comentarios} = id
+  return (
+      <div>
+          <h2>{fullname}</h2>
+          <p>Email: {email}</p>
+          <p>Telefone: {telefone}</p>
+          <p>Data de Nascimento: {birthday}</p>
+          <p>CPF: {cpf}</p>
+          <p>Tipo de Caminhão: {tipo_caminhao}</p>
+          <p>Modelo de Caminhão: {modelo_caminhao}</p>
+          <p>Tamanho de Caminhão: {tamanho_caminhao}</p>
+          <p>Estrelas: {estrelas}</p>
+          <div className="comment-area">
+              <h3>Comentários:</h3>
+              {comentarios.map((comentario) => (
+                  <div key={comentario.id} className="comment">
+                      <p className="user">{comentario.nome}</p>
+                      <p className="text">{comentario.comentario}</p>
+                  </div>
+              ))}
+          </div>
+          <button style={{background: '#008000'}} class="btn btn-success mt-3">Escolher motorista</button>
+      </div>
+  );
+};
 
-function listarComentarios() {
-}
 
-const getMotoristas = async () => {
-    console.log("nhain")
-    console.log(motoristas, "chupa ku")
-    const response = await fetch("./motoristas.json")
-    // .then((e) => console.log(e.json()))
-    let d = await response.json()
-    return response
+const ListarMotoristas = ({ onMotoristaSelecionado }) => {
+    const RenderEstrelas = ({estrelas}) => {
+        const fullStars = Math.floor(estrelas);
+        const halfStar = estrelas % 1 >= 0.5;
+        const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
-}
+        const stars = [];
 
-const ListarMotoristas = () => {
-    const [listamotoristas, setMotoristas] = useState([]);
-        useEffect(() => {
-            try {
-                setMotoristas(motoristas.motoristas)
-                console.log(listamotoristas)
-                // console.log(response)
-                // const data = await response.json();
-                // setMotoristas(data.motoristas);
-                // console.log(setMotoristas)
-            } catch (error) {
-                console.error("Erro ao carregar os motoristas:", error);
-            }
+        // Renderizar estrelas cheias
+        for (let i = 0; i < fullStars; i++) {
+            stars.push(<span key={i} className="fa fa-star checked"></span>);
+        }
 
-        }, [])
-        
+        // Renderizar estrela meia
+        if (halfStar) {
+            stars.push(
+                <span
+                    key={fullStars}
+                    className="fa fa-star-half checked"
+                ></span>
+            );
+        }
+
+        // Renderizar estrelas vazias
+        for (let i = 0; i < emptyStars; i++) {
+            stars.push(
+                <span key={fullStars + i + 1} className="fa fa-star"></span>
+            );
+        }
+
+        return stars;
+    };
+
     return (
         <>
-            {   listamotoristas.length &&
-                listamotoristas.map((m) => {
-                    return (
-                        <div className="box">
+            {motoristas.motoristas.length &&
+                motoristas.motoristas.map((m) => (
+                    <div
+                        className="box"
+                        key={m.id}
+                        onClick={() => onMotoristaSelecionado(m)}
+                    >
                         <p>{m.fullname}</p>
-                         <div className="star-rating">
-                            {[...Array(5)].map((_, starIndex) => (
-                            <><span
-                                    key={starIndex}
-                                    className={`fa fa-star ${starIndex < m.estrelas ? "checked" : ""}`}
-                                ></span></>
-                            ))}
+                        <div className="star-rating">
+                            <RenderEstrelas estrelas={m.estrelas} />
                             <span>({m.estrelas})</span>
                         </div>
                     </div>
-
-                    )
-                })
-            }
+                ))}
         </>
-    )
-}
-// listarMotoristas()
+    );
+};
 
 const Motorista = () => {
-    const mapDiv = useRef(null)
-    
+    const mapDiv = useRef(null);
+    const [motoristaSelecionado, setMotoristaSelecionado] = useState(null);
 
     useEffect(() => {
         mapboxgl.accessToken =
@@ -89,47 +108,53 @@ const Motorista = () => {
             // eslint-disable-next-line no-undef
             new MapboxDirections({
                 accessToken: mapboxgl.accessToken,
-                
             }),
-            'top-left',
-        
+            "top-left"
         );
-    }, [mapDiv])
+    }, [mapDiv]);
 
-    
+    const handleMotoristaSelecionado = (motorista) => {
+        setMotoristaSelecionado(motorista);
+    };
 
-    return AuthGuard(
-            <div>
-                <div className="title">
-                    <img src={Logo}></img>
-                    <h1>Motorista</h1>
-                </div>
-                <div ref={mapDiv}
+    return (
+        <div>
+            <div className="title">
+                <img src={Logo} alt="Logo" />
+                <h1>Motorista</h1>
+            </div>
+            <div
+                ref={mapDiv}
                 style={{
-                    backgroundColor: "red",
+                    backgroundColor: "green",
                     width: "100vw",
                     height: "100vh",
                     position: "fixed",
                     top: 0,
-                    left: 0
+                    left: 0,
                 }}
-                ></div>
-                <div id="map"></div>
-                    <div class="sidebar">
-                        <h1 class="title-motorista">Escolher Motorista</h1>
-                        {motoristas ? ListarMotoristas() : null}
-                        
-                    <div id="reports"></div>
-                    <div className="mot">
-                        <a  className="button" href="/principal">Voltar para o menu principal</a>
+            ></div>
+            <div id="map"></div>
+            <div className="sidebar">
+                <h1 className="title-motorista">Escolher Motorista</h1>
+                {motoristaSelecionado ? (
+                    <div className="box">
+                        <MotoristaInfo id={motoristaSelecionado} />
                     </div>
+                ) : (
+                    <ListarMotoristas
+                        onMotoristaSelecionado={handleMotoristaSelecionado}
+                    />
+                )}
+                <div id="reports"></div>
+                <div className="mot">
+                    <a className="button" href="/principal">
+                        Voltar para o menu principal
+                    </a>
                 </div>
             </div>
-        
-
-    )
-}
+        </div>
+    );
+};
 
 export default Motorista;
-
-

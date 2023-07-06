@@ -57,3 +57,27 @@ a{
     border-radius: 50%;
     cursor: pointer;
   }
+
+  .comment-area {
+  margin-top: 20px;
+}
+
+.comment {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 5px 11px 14px -3px;
+}
+
+.comment p {
+  margin: 5px 0;
+}
+
+.comment .user {
+  font-weight: bold;
+}
+
+.comment .text {
+  color: #555;
+}
